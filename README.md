@@ -1,3 +1,4 @@
-# Python-tutorial
+# Algorithm
+
 
 *Daily Commit of Algorithm*
