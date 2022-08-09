@@ -1,3 +1,3 @@
 # Python-tutorial
 
-#Daily Commit of Algorithm#
+*Daily Commit of Algorithm*
