@@ -3,12 +3,48 @@
 2. 중앙값: N개의 수들을 증가하는 순서로 나열했을 경우 그 중앙에 위치하는 값
 3. 최빈값: N개의 수들 중 가장 많이 나타나는 값
 4. 범위: N개의 수들 중 최댓값과 최솟값의 차이
+
+"dictionary + default dictionary + tuple"
 '''
 
+
+    
+    
 N = int(input())    # 입력되는 숫자들의 갯수
 
-lst = [input() for _ in range(N)]  # 입력 되는 숫자를 리스트 형태로 받는다.
-lst = list(map(int, lst))
+# 이게 편하다~
+lst = [int(input()) for _ in range(N)]  # 입력 되는 숫자를 리스트 형태로 받는다.
+
+# ㅂㅅ 코드
+# lst = [input() for _ in range(N)]  # 입력 되는 숫자를 리스트 형태로 받는다.
+# lst = list(map(int, lst))
+numDic = dict()
+
+# init dictionary
+for i in lst:
+    if i not in numDic.keys():
+        numDic[i] = 0
+    numDic[i] += 1
+
+newlst = sorted(numDic.items(), key = lambda x:x[0])
+newlst.sort(key=lambda x:x[1], reverse=True)
+print(newlst)
+
+# newlst = sorted(numDic.items(), key = lambda x:x[1], reverse=True)
+# newlst.sort(key=lambda x:x[0])
+# print(newlst)
+'''
+python3 2108_통계학.py
+7
+8
+7
+3
+-1
+-1
+3
+4
+3
+'''
 
 
 # 산술 평균
@@ -82,3 +118,11 @@ def max_min(N,lst):
 print(arithmetic_mean(N,lst))
 print(mid(N,lst))
 print(max_min(N,lst))
+
+
+
+# plusThreeFunc = lambda x : x + 3
+# lst = [plusThreeFunc(i) for i in range(10)]
+# print(lst)
+# lst = [i+3 for i in range(10)]
+# print(lst)
